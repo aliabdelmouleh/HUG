@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title> Collax - Your title gores here</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+
+   <script> function estimateBestField() 
+   
+   
+   const form = document.getElementById('studentForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const mathGrade = parseInt(document.getElementById('mathGrade').value);
+      const scienceGrade = parseInt(document.getElementById('scienceGrade').value);
+      const geographyGrade = parseInt(document.getElementById('geographyGrade').value);
+      const technologyGrade = parseInt(document.getElementById('technologyGrade').value);
+      const algorithmsGrade = parseInt(document.getElementById('algorithmsGrade').value);
+      const physicsGrade = parseInt(document.getElementById('physicsGrade').value);
+      const frenchGrade = parseInt(document.getElementById('frenchGrade').value);
+      const englishGrade = parseInt(document.getElementById('englishGrade').value);
+      const arabicGrade = parseInt(document.getElementById('arabicGrade').value);
+      const sportsGrade = parseInt(document.getElementById('sportsGrade').value);
+      const generalAverage = parseFloat(document.getElementById('generalAverage').value);
+      const preferences = Array.from(document.getElementById('preferences').selectedOptions, option => option.value);
+      const dreamJobs = Array.from(document.getElementById('dreamJobs').selectedOptions, option => option.value);
+
+      // Logic to estimate the best field of study
+      let bestField = '';
+
+      if (preferences.includes('coding') && preferences.includes('tech')) {
+        if (mathGrade >= 15 && generalAverage >= 16) {
+          bestField = 'Computer Science';
+        } else if (technologyGrade >= 15 && generalAverage >= 16) {
+          bestField = 'Technology';
+        }
+      } else if (preferences.includes('maths')) {
+        if (mathGrade >= 15 && generalAverage >= 16) {
+          bestField = 'Mathematics';
+        }
+      } else if (preferences.includes('learning-languages')) {
+        if (arabicGrade >= 15 && frenchGrade >= 15 && englishGrade >= 15 && generalAverage >= 16) {
+          bestField = 'Literature';
+        }
+      } else if (preferences.includes('sports')) {
+        if (sportsGrade >= 15 && generalAverage >= 16) {
+          bestField = 'Sports';
+        }
+      } else if (preferences.includes('gaming')) {
+        if (generalAverage >= 16) {
+          bestField = 'Computer Science';
+        }
+      }
+
+      if (bestField === '') {
+        // No specific field matches the preferences
+        if (dreamJobs.includes('developer')) {
+          if (mathGrade >= 15 && generalAverage >= 16) {
+            bestField = 'Computer Science';
+          }
+        } else if (dreamJobs.includes('doctor')) {
+          if (scienceGrade >= 15 && generalAverage >= 16) {
+            bestField = 'Science';
+          }
+        } else if (dreamJobs.includes('judge')) {
+          if (geographyGrade >= 15 && historyGrade >= 15 && generalAverage >= 16) {
+            bestField = 'Law';
+          }
+        } else if (dreamJobs.includes('sportsman')) {
+          if (sportsGrade >= 15 && generalAverage >= 16) {
+            bestField = 'Sports';
+          }
+        } else if (dreamJobs.includes('mathematician')) {
+          if (mathGrade >= 15) {
+            bestField = 'Mathematics';
+          }
+        } else if (dreamJobs.includes('economist')) {
+          if (generalAverage >= 16) {
+            bestField = 'Economics';
+          }
+        }
+      }
+
+      resultDiv.textContent = `The best field of study for ${name} is ${bestField}`;
+     
+    });
+
+
+   
+   </script>
+</head>
+
+<body>
+   <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+    <!-- tp-header-area-start -->
+    <header class="d-none d-lg-block">
+      <div id="header-sticky" class="tp-header-area header-transparent pl-165 pr-165 pt-35">
+         <div class="container-fluid">
+            <div class="row align-items-center">
+               <div class="col-xl-3 col-lg-3">
+                  <div class="tp-logo">
+                     <a href="index.html"><img src="assets/img/logo/logo.png"   alt=""> <b>Orientation</b></a>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7">
+                  <div class="tp-main-menu">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li ><a href="index.html">Home</a> 
+                              
+                           </li>
+                           <li ><a href="about.html">about us </a> 
+                              
+                           </li>
+                           <li ><a href="scolarship.html">Scolarships</a> 
+                              
+                           </li>
+                           <li ><a href="contactus.html">Contact us </a> 
+                              
+                           </li>
+                           <li >
+                              <button background-color: #5956e9; type="button" name="myButton">
+                                 <a 
+                                 href="portfolio-details.html">Login</a>
+                              </button>
+                             
+                           </li>
+                     </nav>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- tp-header-area-end -->
+
+   <div id="header-sticky-mobile" class="tp-md-header-area d-md-block d-lg-none pt-30 pb-30">
+      <div class="container-fluid">
+         <div class="row align-items-center">
+            <div class="col-md-6 col-6">
+               <div class="tp-logo">
+                  <a href="index.html"><img src="assets/img/logo/logo-blue.png" alt=""></a>
+               </div>
+            </div>
+            <div class="col-md-6 col-6">
+               <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                  <a class="tp-btn-yellow d-none d-md-block" href="#">How it Works</a>
+                  <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="index.html">
+               <img src="assets/img/logo/logo-white.png" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
+
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Melbone
+                     st, Australia, Ny 12099</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:8180012345678">+81 800 123 456 78</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:Collaxmail@gmail.com">Collaxmail@gmail.com</a></li>
+            </ul>
+         </div>
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="assets/img/offcanvas/insta-1.jpg" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="assets/img/offcanvas/insta-2.jpg" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="assets/img/offcanvas/insta-4.jpg" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="assets/img/offcanvas/insta-4.jpg" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb area start -->
+      <section class="breadcrumb__area  breadcrumb__pt-310 include-bg p-relative"
+         data-background="assets/img/campus.avif">
+         <div class="ac-about-shape-img z-index-1">
+            
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content p-relative z-index-1">
+                     
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- breadcrumb area end -->
+
+
+      <!--contact-area-start -->
+      
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tpcontact">
+                     <h4 class="tp-contact-big-title">Let us help you</h4>
+                     <div class="tpcontact__form tpcontact__form-3">
+                        <form id="studentForm" action="assets/mail.php">
+                           <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="mathGrade">Math Grade:</label>
+    <input type="number" id="mathGrade" name="mathGrade" required><br>
+
+    <label for="scienceGrade">Science Grade:</label>
+    <input type="number" id="scienceGrade" name="scienceGrade" required><br>
+
+    <label for="geoHistoryGrade">Geography and History Mean Grade:</label>
+    <input type="number" id="geoHistoryGrade" name="geoHistoryGrade" required><br>
+
+    <label for="technologyGrade">Technology Grade:</label>
+    <input type="number" id="technologyGrade" name="technologyGrade" required><br>
+
+    <label for="algorithmsGrade">Algorithms Grade:</label>
+    <input type="number" id="algorithmsGrade" name="algorithmsGrade" required><br>
+
+    <label for="physicsGrade">Physics Grade:</label>
+    <input type="number" id="physicsGrade" name="physicsGrade" required><br>
+
+    <label for="frenchGrade">French Grade:</label>
+    <input type="number" id="frenchGrade" name="frenchGrade" required><br>
+
+    <label for="englishGrade">English Grade:</label>
+    <input type="number" id="englishGrade" name="englishGrade" required><br>
+
+    <label for="arabicGrade">Arabic Grade:</label>
+    <input type="number" id="arabicGrade" name="arabicGrade" required><br>
+
+    <label for="sportsGrade">Sports Grade:</label>
+    <input type="number" id="sportsGrade" name="sportsGrade" required><br>
+
+    <label for="generalAverage">General Average Score:</label>
+    <input type="number" id="generalAverage" name="generalAverage" required><br>
+
+    <fieldset>
+      <legend>Preferences:</legend>
+      <label class="checkbox-item"><input type="checkbox" name="preference" value="coding"> Coding</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="reading"> Reading Books</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="sports"> Sports</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="maths"> Maths</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="learning-languages"> Learning Languages</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="gaming"> Gaming</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="tech"> Tech</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="robotics"> Robotics</label>
+        <label class="checkbox-item"><input type="checkbox" name="preference" value="world-economie-business"> World Economie and Business</label>
+        
+      
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Dream Jobs:</legend>
+      <label class="checkbox-label">
+         <input type="checkbox" value="developer"> Developer etc
+       </label>
+       <label class="checkbox-label">
+         <input type="checkbox" value="doctor"> Doctor etc
+       </label>
+       <label class="checkbox-label">
+         <input type="checkbox" value="judge"> Judge etc
+       </label>
+       <label class="checkbox-label">
+         <input type="checkbox" value="sportsman"> Sportsman etc
+       </label>
+       <label class="checkbox-label">
+         <input type="checkbox" value="mathematician"> Mathematician etc
+       </label>
+       <label class="checkbox-label">
+         <input type="checkbox" value="economist"> Economist etc
+       </label>
+      
+
+    </fieldset>
+
+    <button type="button"  onclick="alert('ali best field is computer science')"   class="tp-btn-yellow">Estimate Best Field</button>
+                      
+                        
+                     </div>
+                     <p class="ajax-response"></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact-area-end -->
+
+   </main>
+
+
+   <!-- footer-area-start -->
+
+   <footer>
+      <div class="tp-footer-area black-bg pt-130 pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__logo mb-30">
+                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                     </div>
+                     <div class="tp-footer-widget__text mb-30">
+                        <p>Helping High School Students Explore Their Options with Compassionate Orientation Services</p>
+                     </div>
+                     <div class="tp-footer-widget__social-link">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-skype"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6 d-flex justify-content-lg-center">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Usefull Links</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Contact us</a></li>
+                           <li><a href="#">How it Works</a></li>
+                           <li><a href="#">Create</a></li>
+                           <li><a href="#">Explore</a></li>
+                           <li><a href="#">Terms & Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6">
+                  <div class="tp-footer-widget pl-20">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Community</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Help Center</a></li>
+                           <li><a href="#">Partners</a></li>
+                           <li><a href="#">Suggestions</a></li>
+                           <li><a href="blog.html">Blog</a></li>
+                           <li><a href="#">Newsletters</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Subscribe Newslatter</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-55">
+                     </div>
+                     <div class="tp-footer-widget__input">
+                        <form action="#">
+                           <input type="text" placeholder="Enter Mail">
+                           <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="tp-copyright-area">
+            <div class="container">
+               <div class="copyright-border pt-40">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-left text-lg-start text-start text-md-center">
+                           <p> © Copyright ©2022 Collax. All Rights Reserved Copyright</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-right text-start text-md-center text-lg-end">
+                           <a href="#">Terms and conditions</a>
+                           <a href="#"> Privacy policy</a>
+                           <a href="#">Login / Signup</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- footer-area-end -->
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+   <!-- JS here -->
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/counterup.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+
+</html>
